@@ -1,0 +1,28 @@
+<main>
+  <div class="head">
+    <h2> create/ change Todo</h2>
+
+    <mat-icon class="icon" (click)="deleteTodo()"> delete</mat-icon>
+  </div>
+  <form class="form" [formGroup]="todoForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input id="title" matInput formControlName="title">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-checkbox class="example-margin" formControlName="checked">Todo
+      erledigt</mat-checkbox>
+
+    <div class="btn_box">
+      <button *ngIf="change" mat-raised-button color="primary" (click)="changeTodo()">Save changes</button>
+      <button *ngIf="!change" mat-raised-button color="primary" (click)="createTodo()">Save</button>
+      <button mat-raised-button color="warn" (click)="closeDialog()">abort</button>
+    </div>
+  </form>
+</main>

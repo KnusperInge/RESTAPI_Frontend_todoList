@@ -1,7 +1,13 @@
-<form (ngSubmit)="login()">
-  <label for="email">Email</label>
-  <input type="email" name="email" [(ngModel)]="email" required>
-  <label for="password">Password</label>
-  <input type="password" name="password" [(ngModel)]="password" required>
-  <button>Login</button>
-</form>
+<main>
+  <form (ngSubmit)="login()">
+    <div class="form_row">
+      <label for="email">Username</label>
+      <input type="text" name="username" [(ngModel)]="username" required>
+    </div>
+    <div class="form_row">
+      <label for="password">Password</label>
+      <input type="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <button>Login</button>
+  </form>
+</main>

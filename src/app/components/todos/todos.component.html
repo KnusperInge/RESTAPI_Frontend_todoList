@@ -1,0 +1,20 @@
+<main>
+  <div class="title"> Alle Todos </div>
+  <div class="err" *ngIf="errMessage"> Du hast keinen Zugriff auf alle Todos, bitte logge dich ein </div>
+  <div class="content">
+    <div *ngFor="let todo of alltodos">
+      <div class="card" (click)="openDialog(true,todo)">
+        <div class="note_title">
+          <h5>{{todo.title}}</h5><input type="checkbox" [checked]="todo.checked">
+        </div>
+        <div class="note_body">{{todo.description}}</div>
+        <div class="footer_row">erstellt am:{{todo.created_at}}</div>
+      </div>
+
+
+    </div>
+  </div>
+  <button (click)="openDialog(false)" class="new_note" mat-fab matTooltip="Primary" color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
+</main>
